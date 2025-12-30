@@ -1,0 +1,333 @@
+.contact-header {
+  text-align: center;
+  margin: 50px 0 64px 0;
+}
+
+.contact-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 60px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 16px;
+}
+
+.contact-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 3px;
+  background-color: #8A2BE2; /* blueviolet */
+  border-radius: 2px;
+  animation: fluctuate 4s ease-in-out infinite;
+}
+
+.page-bg {
+  width: 100%;
+  padding: 0 5vw;
+}
+
+.site-wrap {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.contact-area {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* ===================== GLASS SOCIAL BAR ===================== */
+
+.social-bar {
+  width: 72px;
+  min-height: 420px;
+  padding: 18px 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* IMPORTANT */
+
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 30, 70, 0.45),
+    rgba(90, 40, 120, 0.35)
+  );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.12);
+
+  transition: width 0.45s ease;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.social-bar:hover {
+  width: 300px;
+}
+
+/* ===================== SIDEBAR TITLE ===================== */
+
+.social-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 6px;
+
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 28px;
+}
+
+.social-title .emoji {
+  font-size: 26px;
+}
+
+
+.title-text {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.35s ease;
+  white-space: nowrap;
+}
+
+.social-bar:hover .title-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ===================== SOCIAL LINKS ===================== */
+
+.social-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: white;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-item img {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+}
+
+.social-item span {
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all 0.35s ease;
+  white-space: nowrap;
+}
+
+.social-bar:hover .social-item span {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.social-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 18px rgba(155, 46, 240, 0.8);
+}
+
+/* ===================== FORM ===================== */
+
+.form-wrap {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.form-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 820px;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.field input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 10px 6px;
+  font-size: 16px;
+  outline: none;
+}
+
+.field-icon {
+  width: 42px;
+  height: 42px;
+  opacity: 0.95;
+}
+
+.message {
+  width: 100%;
+  min-height: 180px;
+  border-radius: 16px;
+  padding: 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(28, 35, 79, 0.85),
+    rgba(98, 53, 94, 0.7)
+  );
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.submit {
+  margin-top: 10px;
+  padding: 16px;
+  border-radius: 35px;
+  border: none;
+  background: linear-gradient(90deg, #9b2ef0, #d65ddf);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(100, 20, 150, 0.3);
+  transition: 0.25s ease;
+}
+
+.submit:hover {
+  opacity: 0.95;
+  transform: translateY(-2px);
+}
+
+/* ===================== GLASS MAIL POPUP ===================== */
+
+.mail-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 10, 30, 0.6);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.mail-popup {
+  width: 360px;
+  padding: 28px;
+  border-radius: 22px;
+  background: linear-gradient(
+    180deg,
+    rgba(30, 40, 90, 0.55),
+    rgba(120, 60, 160, 0.35)
+  );
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  color: white;
+  animation: popupIn 0.35s ease;
+}
+
+.mail-popup h3 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.mail-glass-options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mail-glass-options a {
+  padding: 14px;
+  border-radius: 16px;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: 0.3s ease;
+}
+
+.mail-glass-options a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 20px rgba(155, 46, 240, 0.8);
+}
+
+/* ===================== ANIMATIONS ===================== */
+
+@keyframes popupIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media (max-width: 900px) {
+  .contact-area {
+    flex-direction: column;
+  }
+
+  .social-bar {
+    width: 100%;
+    min-height: auto;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .social-bar:hover {
+    width: 100%;
+  }
+
+  .social-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .form-wrap {
+    padding-left: 0;
+  }
+}

@@ -1,0 +1,236 @@
+
+
+.events-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 24px 64px 24px;
+    position: relative;
+    overflow-x: clip;
+  }
+  
+  .events-page::before,
+  .events-page::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    filter: blur(200px);
+  }
+  
+  .events-page::before {
+    left: -400px;
+    top: 30%;
+    transform: translateY(-50%);
+    background: radial-gradient(circle, rgba(255, 105, 180, 0.7), rgba(138, 43, 226, 0.5) 70%, transparent 100%);
+  }
+  
+  .events-page::after {
+    right: -400px;
+    top: 70%;
+    transform: translateY(-50%);
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.7), rgba(255, 105, 180, 0.5) 70%, transparent 100%);
+  }
+
+  
+  .logo img {
+    height: 40px;
+    /* 
+      This 'invert' filter flips the colors of your logo. It will turn the white
+      background black (making it blend in) and the dark parts of your logo light.
+      The BEST solution is still to use a transparent PNG, but this is a good trick.
+    */
+    filter: invert(1);
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    font-weight: 500;
+  }
+  
+  .nav-links li:hover {
+    color: var(--primary);
+    text-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary);
+  }
+  
+  /* Header */
+  .events-header {
+    text-align: center;
+    margin: 50px 0 64px 0;
+  }
+  
+  .events-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-top: 60px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 16px;
+  }
+  
+  .events-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 3px;
+    background-color: #8A2BE2; /* blueviolet */
+    border-radius: 2px;
+    animation: fluctuate 4s ease-in-out infinite;
+  }
+  
+  /* Grid */
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 40px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  
+  /* Card */
+  .event-card {
+    background: rgba(4, 19, 46, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+    opacity: 0; /* Start transparent for animation */
+    animation: slideDown 0.5s ease-out forwards;
+  }
+  
+  /* Staggered animation delays */
+  .event-card:nth-child(1) { animation-delay: 0.3s; }
+  .event-card:nth-child(2) { animation-delay: 0.6s; }
+  .event-card:nth-child(3) { animation-delay: 0.9s; }
+  .event-card:nth-child(4) { animation-delay: 1.2s; }
+  .event-card:nth-child(5) { animation-delay: 1.5s; }
+  .event-card:nth-child(6) { animation-delay: 1.8s; }
+  
+  
+  .event-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(138, 43, 226, 0.4), 0 0 20px rgba(138, 43, 226, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .event-image {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
+  }
+  
+  .event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .event-date-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: #FFFFFF;
+    color: #1a1a1a;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .event-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background: rgba(4, 19, 46, 0.4);
+  }
+  
+  .event-content h3 {
+    margin: 0 0 12px 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #60a5fa;
+    letter-spacing: 0.5px;
+  }
+  
+  .event-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+  }
+  
+  .event-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .event-footer span {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .event-footer span:first-child::before {
+    content: '📍';
+    font-size: 1rem;
+    filter: hue-rotate(0deg) saturate(1.5);
+  }
+  
+  .event-footer span:last-child::before {
+    content: '🕒';
+    font-size: 1rem;
+  }
+  
+  
+  /* Keyframe Animations */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fluctuate {
+    0%, 100% {
+      width: 50%;
+      opacity: 0.7;
+    }
+    50% {
+      width: 80%;
+      opacity: 1;
+    }
+  }
+
