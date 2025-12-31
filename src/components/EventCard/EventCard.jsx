@@ -15,8 +15,8 @@ const EventCard = ({ event }) => {
         <p>{event.description}</p>
 
         <div className="event-footer">
-          <span>{event.venue}</span>
-          <span>{event.date}</span>
+          <span>{event.venue}</span> <br></br>
+          <span style={{ color: "white" }}>{event.date}</span>
         </div>
       </div>
     </Link>

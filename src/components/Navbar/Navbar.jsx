@@ -1,20 +1,20 @@
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../assets/Logo.png";
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
+      setScrolled(window.scrollY > 50);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
@@ -22,31 +22,25 @@ const Navbar = () => {
         <Link className="navbar-logo" to="/">
           <img src={logo} alt="Tech Vayuna Logo" />
         </Link>
-        <ul className="navbar-menu">
-          <li>
-            <Link to="/about">
-              ABOUT US
-            </Link>
-          </li>
-          <li>
-            <Link to="/events">
-              EVENTS
-            </Link>
-          </li>
-          <li>
-            <Link to="/team">
-              OUR TEAM
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact">
-              CONTACT US
-            </Link>
-          </li>
+
+        {/* Toggle button – minimal */}
+        <button
+          className="menu-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle Menu"
+        >
+          ☰
+        </button>
+
+        <ul className={`navbar-menu ${menuOpen ? "show" : ""}`}>
+          <li><Link to="/about" onClick={() => setMenuOpen(false)}>ABOUT US</Link></li>
+          <li><Link to="/events" onClick={() => setMenuOpen(false)}>EVENTS</Link></li>
+          <li><Link to="/team" onClick={() => setMenuOpen(false)}>OUR TEAM</Link></li>
+          <li><Link to="/contact" onClick={() => setMenuOpen(false)}>CONTACT US</Link></li>
         </ul>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
