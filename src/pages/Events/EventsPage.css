@@ -5,6 +5,7 @@
   margin: 0 auto;
   padding: 0 24px;
   box-sizing: border-box;
+  text-align: center;
 }
 
 /* ---------- HEADER ---------- */
@@ -149,6 +150,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
   }
+  
 }
 
 /* ---------- MOBILE ---------- */
