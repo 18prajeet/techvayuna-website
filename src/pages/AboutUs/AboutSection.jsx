@@ -4,8 +4,8 @@ import JS from "../../assets/AboutPage/javascript.svg";
 import Python from "../../assets/AboutPage/python.svg";
 import React from "../../assets/AboutPage/react.svg";
 import Node from "../../assets/AboutPage/nodejs.svg";
-import MongoDB from "../../assets/AboutPage/mongodb.svg";
-import GitHub from "../../assets/AboutPage/github.svg";
+import Pandas from "../../assets/AboutPage/pandas.png";
+import Design from "../../assets/AboutPage/design.png";
 import TeamworkImage from "../../assets/AboutPage/Teamwork.png";
 const AboutSection = () => {
   const techIcons = [
@@ -13,8 +13,8 @@ const AboutSection = () => {
     { name: "Python", src: Python, color: "#3776ab" },
     { name: "React", src: React, color: "#61dafb" },
     { name: "Node.js", src: Node, color: "#339933" },
-    { name: "MongoDB", src: MongoDB, color: "#47a248" },
-    { name: "GitHub", src: GitHub, color: "#dd0031" },
+    { name: "Design", src: Design, color: "#47a248" },
+    { name: "Pandas", src: Pandas, color: "#dd0031" },
   ]
 
   return (
