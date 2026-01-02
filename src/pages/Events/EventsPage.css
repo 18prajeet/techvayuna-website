@@ -22,47 +22,11 @@
 /* ---------- PAGE ---------- */
 .events-page {
   width: 100%;
-  min-height: 100vh;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
   padding-bottom: 64px;
 }
 
-/* Background glow */
-.events-page::before,
-.events-page::after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  width: 800px;
-  height: 800px;
-  border-radius: 50%;
-  filter: blur(200px);
-}
-
-.events-page::before {
-  left: -400px;
-  top: 30%;
-  transform: translateY(-50%);
-  background: radial-gradient(
-    circle,
-    rgba(255, 105, 180, 0.7),
-    rgba(138, 43, 226, 0.5) 70%,
-    transparent 100%
-  );
-}
-
-.events-page::after {
-  right: -400px;
-  top: 70%;
-  transform: translateY(-50%);
-  background: radial-gradient(
-    circle,
-    rgba(138, 43, 226, 0.7),
-    rgba(255, 105, 180, 0.5) 70%,
-    transparent 100%
-  );
-}
 
 /* ---------- GRID ---------- */
 .events-grid {

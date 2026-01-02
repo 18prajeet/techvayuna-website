@@ -1,10 +1,12 @@
 .footer {
     width: 100%;
-    background: linear-gradient(180deg, rgba(4, 19, 46, 0.8) 0%, rgba(65, 50, 226, 0.2) 100%);
+    background:  rgba(4, 19, 46, 0.40);
     padding: 36px 32px 28px;
     margin-top: 60px;
     position: relative;
     z-index: 1;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
   
   .footer-content {

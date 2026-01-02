@@ -185,7 +185,7 @@
 /* ===================== MAIL POPUP OVERLAY ===================== */
 
 .mail-popup-overlay {
-  position: fixed;
+  position: fixed !important;
   inset: 0;
 
   background: rgba(10, 8, 30, 0.65);
@@ -196,7 +196,7 @@
   align-items: center;
   justify-content: center;
 
-  z-index: 9999;
+  z-index: 9999 !important;
   padding: 16px;
 }
 
@@ -205,7 +205,7 @@
 .mail-popup {
   width: 100%;
   max-width: 420px;
-
+  z-index: 9999 !important;
   padding: 28px 26px;
   border-radius: 24px;
 
@@ -241,7 +241,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-
+  z-index: 9999;
   width: 100%;
   max-width: 340px;
   margin: 0 auto;
@@ -294,6 +294,7 @@
   .mail-popup {
     padding: 24px 18px;
     border-radius: 20px;
+    z-index: 1000 !important;
   }
 
   .mail-popup h3 {
@@ -311,6 +312,7 @@
 @media (min-width: 481px) and (max-width: 900px) {
   .mail-popup {
     max-width: 380px;
+    z-index: 9999 !important;
   }
 }
 

@@ -1,20 +1,19 @@
-
 import "./AboutSection.css";
-import JS from "../../assets/AboutPage/javascript.svg";
+import Camera from "../../assets/AboutPage/camera.png";
 import Python from "../../assets/AboutPage/python.svg";
 import React from "../../assets/AboutPage/react.svg";
-import Node from "../../assets/AboutPage/nodejs.svg";
-import Pandas from "../../assets/AboutPage/pandas.png";
+import Content from "../../assets/AboutPage/Content-media.png";
+import PowerBi from "../../assets/AboutPage/powerbi.png";
 import Design from "../../assets/AboutPage/design.png";
 import TeamworkImage from "../../assets/AboutPage/Teamwork.png";
 const AboutSection = () => {
   const techIcons = [
-    { name: "JavaScript", src: JS, color: "#3776ab"},
+    { name: "Media", src: Camera, color: "#3776ab"},
     { name: "Python", src: Python, color: "#3776ab" },
     { name: "React", src: React, color: "#61dafb" },
-    { name: "Node.js", src: Node, color: "#339933" },
+    { name: "Content-media", src: Content, color: "#339933" },
     { name: "Design", src: Design, color: "#47a248" },
-    { name: "Pandas", src: Pandas, color: "#dd0031" },
+    { name: "PowerBi", src: PowerBi, color: "#dd0031" },
   ]
 
   return (

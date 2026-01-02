@@ -1,46 +1,8 @@
 .event-details-page {
   width: 100%;
-  min-height: 100vh;
   padding: 0 24px 64px 24px;
   position: relative;
-  overflow-x: hidden;
-}
-
-/* ================= BACKGROUND GLOW ================= */
-
-.event-details-page::before,
-.event-details-page::after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  width: 800px;
-  height: 800px;
-  border-radius: 50%;
-  filter: blur(200px);
-}
-
-.event-details-page::before {
-  left: -400px;
-  top: 30%;
-  transform: translateY(-50%);
-  background: radial-gradient(
-    circle,
-    rgba(255, 105, 180, 0.7),
-    rgba(138, 43, 226, 0.5) 70%,
-    transparent 100%
-  );
-}
-
-.event-details-page::after {
-  right: -400px;
-  top: 70%;
-  transform: translateY(-50%);
-  background: radial-gradient(
-    circle,
-    rgba(138, 43, 226, 0.7),
-    rgba(255, 105, 180, 0.5) 70%,
-    transparent 100%
-  );
+  overflow: hidden;
 }
 
 /* ================= DESKTOP (UNCHANGED OVERLAP) ================= */
@@ -85,6 +47,7 @@
 
 .event-details-text {
   color: var(--text);
+  animation: slideInFromRight 0.8s ease-out forwards;
 }
 
 .event-details-text h2 {
@@ -135,9 +98,11 @@
 
   .event-details-text h2 {
     font-size: 2rem;
+    padding: 0 16px 48px 16px;
   }
 
   .event-details-text p {
     font-size: 1rem;
+    padding: 0 16px 48px 16px;
   }
 }

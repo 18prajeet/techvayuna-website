@@ -21,6 +21,12 @@ const EventDetails = () => {
           <img src={event.alt} alt="Event 1" className="img-1" />
           <img src={event.image} alt="Event 2" className="img-2" />
         </div>
+        <div className="event-details-text">
+          <h2>{event.title}</h2>
+          <p>{event.description}</p>
+          <p><strong>Venue:</strong> {event.venue}</p>
+          <p><strong>Date:</strong> {event.date}</p>
+        </div>
       </div>
     </div>
   );

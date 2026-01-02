@@ -58,7 +58,9 @@
 .navbar-menu li a:hover {
   color: #f05959;
 }
-
+.mobile-menu {
+  display: none;
+}
 /* 🔧 PATCH: menu toggle button */
 .menu-toggle {
   display: none;
@@ -71,23 +73,55 @@
 
 /* 🔧 PATCH: Responsive handling ONLY */
 @media (max-width: 768px) {
+  
+  .navbar .navbar-menu {
+    display: none;
+  }
   .menu-toggle {
     display: block;
   }
-
-  .navbar-menu {
-    position: absolute;
-    top: 100%;
+  .mobile-menu {
+    display: none; /* default */
+    position: fixed;
+    top: 72px; /* navbar height */
     left: 0;
     width: 100%;
-    background: rgba(4, 19, 46, 0.95);
+    height: calc(100vh - 72px);
+
+    background: rgba(4, 19, 46, 0.35);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    z-index: 999;
     flex-direction: column;
-    gap: 1.2rem;
-    padding: 1.2rem 0;
-    display: none;
+    align-items: center;
+    gap: 1.4rem;
   }
 
-  .navbar-menu.show {
+  .mobile-menu.show {
     display: flex;
   }
+  .navbar-menu {
+    position: fixed !important;
+    top:78px;
+    left: 0;
+    width: 100%;
+    padding: 0.25rem 0;
+    background: rgba(4, 19, 46, 0.35);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+    z-index: 1000 !important;
+    transition: all 0.3s ease;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 0 0 1rem 0;
+    display: none;
+
+  }
+
+  .navbar-menu.show{
+    display: flex;
+  }
+
 }

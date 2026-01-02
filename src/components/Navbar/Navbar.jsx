@@ -17,6 +17,7 @@ const Navbar = () => {
   }, []);
 
   return (
+    <>
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
         <Link className="navbar-logo" to="/">
@@ -31,15 +32,15 @@ const Navbar = () => {
         >
           ☰
         </button>
-
         <ul className={`navbar-menu ${menuOpen ? "show" : ""}`}>
           <li><Link to="/about" onClick={() => setMenuOpen(false)}>ABOUT US</Link></li>
           <li><Link to="/events" onClick={() => setMenuOpen(false)}>EVENTS</Link></li>
           <li><Link to="/team" onClick={() => setMenuOpen(false)}>OUR TEAM</Link></li>
           <li><Link to="/contact" onClick={() => setMenuOpen(false)}>CONTACT US</Link></li>
         </ul>
-      </div>
+    </div>
     </nav>
+  </>
   );
 };
 

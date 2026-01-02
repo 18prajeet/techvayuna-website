@@ -11,12 +11,10 @@ const EventCard = ({ event }) => {
       </div>
 
       <div className="event-content">
-        <h3>{event.title}</h3>
-        <p>{event.description}</p>
+        <h3>✨ {event.title} ✨</h3>
 
         <div className="event-footer">
-          <span>{event.venue}</span> <br></br>
-          <span style={{ color: "white" }}>{event.date}</span>
+          <span style={{ color: "white" }}>📅 {event.date}</span>
         </div>
       </div>
     </Link>
