@@ -1,4 +1,3 @@
-
 import "./AboutSection.css";
 import Camera from "../../assets/AboutPage/camera.png";
 import Python from "../../assets/AboutPage/python.svg";
