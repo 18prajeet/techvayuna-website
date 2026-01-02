@@ -1,0 +1,370 @@
+/* ===================== HEADER ===================== */
+
+.contact-header {
+  text-align: center;
+  margin: 50px 0 64px;
+}
+
+.contact-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 60px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 16px;
+}
+
+.contact-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 3px;
+  background-color: #8A2BE2;
+  border-radius: 2px;
+}
+
+/* ===================== PAGE WRAPPER ===================== */
+
+.page-bg {
+  width: 100%;
+  padding: 0 16px;
+}
+
+.site-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===================== MAIN LAYOUT ===================== */
+
+.contact-area {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+/* ===================== SOCIAL CARD ===================== */
+
+.social-bar {
+  width: 280px; /* FIXED WIDTH = NO DRIFT */
+  padding: 24px;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: linear-gradient(
+    180deg,
+    rgba(20, 30, 70, 0.45),
+    rgba(90, 40, 120, 0.35)
+  );
+
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
+}
+
+/* ===================== SOCIAL CONTENT ===================== */
+
+.social-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 28px;
+}
+
+.social-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: white;
+  justify-content: center;
+}
+
+.social-item img {
+  width: 34px;
+  height: 34px;
+}
+
+/* ===================== FORM ===================== */
+
+.form-wrap {
+  width: 90%;
+  max-width: 620px;
+}
+
+.form-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* INPUT ROW */
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.field input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 10px 6px;
+  font-size: 16px;
+  outline: none;
+}
+
+.field-icon {
+  width: 36px;
+  height: 36px;
+}
+
+/* MESSAGE */
+
+.message {
+  width: 80%;
+  min-height: 160px;
+  border-radius: 16px;
+  padding: 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(28, 35, 79, 0.85),
+    rgba(98, 53, 94, 0.7)
+  );
+  border: none;
+  color: white;
+}
+
+/* BUTTON */
+
+.submit {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 360px;
+  padding: 16px;
+  border-radius: 35px;
+  border: none;
+  background: linear-gradient(90deg, #9b2ef0, #d65ddf);
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ===================== MAIL POPUP OVERLAY ===================== */
+
+.mail-popup-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(10, 8, 30, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+  padding: 16px;
+}
+
+/* ===================== POPUP CONTAINER ===================== */
+
+.mail-popup {
+  width: 100%;
+  max-width: 420px;
+
+  padding: 28px 26px;
+  border-radius: 24px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(40, 25, 70, 0.85),
+    rgba(90, 45, 110, 0.75)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.55),
+    inset 0 1px 1px rgba(255, 255, 255, 0.18);
+
+  color: #ffffff;
+  text-align: center;
+
+  animation: mailPopupIn 0.35s ease-out;
+}
+
+/* ===================== POPUP TITLE ===================== */
+
+.mail-popup h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 22px;
+  letter-spacing: 0.3px;
+}
+
+/* ===================== MAIL OPTIONS ===================== */
+
+.mail-glass-options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+.mail-glass-options a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 18px;
+  border-radius: 18px;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.22),
+    rgba(255, 255, 255, 0.10)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 12px 25px rgba(0, 0, 0, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+
+  transition: all 0.25s ease;
+}
+
+/* Hover / Tap feedback */
+.mail-glass-options a:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.32),
+    rgba(255, 255, 255, 0.18)
+  );
+  box-shadow: 0 0 24px rgba(155, 46, 240, 0.75);
+}
+
+/* ===================== MOBILE ===================== */
+
+@media (max-width: 480px) {
+  .mail-popup {
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+
+  .mail-popup h3 {
+    font-size: 18px;
+  }
+
+  .mail-glass-options a {
+    font-size: 15px;
+    padding: 13px 16px;
+  }
+}
+
+/* ===================== TABLET ===================== */
+
+@media (min-width: 481px) and (max-width: 900px) {
+  .mail-popup {
+    max-width: 380px;
+  }
+}
+
+/* ===================== ANIMATION ===================== */
+
+@keyframes mailPopupIn {
+  from {
+    opacity: 0;
+    transform: scale(0.88) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+
+/* ===================== MOBILE ===================== */
+
+
+@media (max-width: 900px) {
+  .contact-area {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-bar {
+    width: 85%;
+    margin-right: 2rem;
+    max-width: 360px;
+  }
+
+  .form-wrap {
+    width: 80%;
+  }
+  .message{
+    width: 80%;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-header h1 {
+    font-size: 2.3rem;
+  }
+
+  .form-title {
+    font-size: 26px;
+  }
+  .message{
+    width: 80%;
+    margin-right: 10px;
+  }
+  .submit{
+    margin-right: 1.5em;
+  }
+}

@@ -1,0 +1,79 @@
+.hero {
+  padding-top: 96px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 0;
+}
+
+.hero-swiper {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- Desktop behavior (unchanged) ---------- */
+.hero-slide {
+  width: 100%;
+  height: 600px;
+}
+
+/* ---------- Image handling (PATCHED) ---------- */
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center; /* 🔧 FIX: force true center */
+  display: block;
+}
+
+/* ---------- Pagination ---------- */
+.swiper-pagination-bullet {
+  background: #ffffff;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background: #f05959;
+  opacity: 1;
+}
+
+/* ---------- RESPONSIVE PATCH ONLY ---------- */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 84px;
+  }
+
+  /* 🔧 FIX: remove side padding ONLY for carousel */
+  .hero-container {
+    width: 100%;
+    padding: 1rem 0 0; /* no left/right padding */
+  }
+
+  .hero-swiper {
+    border-radius: 10px;
+  }
+
+  .hero-slide {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: 65vh;
+  }
+
+  .hero-slide img {
+    height: 100%;
+  }
+}
+
+/* ---------- Extra safety for very small devices ---------- */
+@media (max-width: 480px) {
+  .hero-slide {
+    aspect-ratio: 4 / 3;
+    max-height: 55vh;
+  }
+}

@@ -1,0 +1,127 @@
+.navbar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(4, 19, 46, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);  
+  padding: 0.25rem 0;
+  z-index: 1000 !important;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(4, 19, 46, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 80px;
+  width: auto;
+}
+
+.navbar.scrolled .navbar-logo img {
+  height: 56px;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 1.8rem;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar-menu li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar-menu li a:hover {
+  color: #f05959;
+}
+.mobile-menu {
+  display: none;
+}
+/* 🔧 PATCH: menu toggle button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* 🔧 PATCH: Responsive handling ONLY */
+@media (max-width: 768px) {
+  
+  .navbar .navbar-menu {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .mobile-menu {
+    display: none; /* default */
+    position: fixed;
+    top: 72px; /* navbar height */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 72px);
+
+    background: rgba(4, 19, 46, 0.35);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.4rem;
+  }
+
+  .mobile-menu.show {
+    display: flex;
+  }
+  .navbar-menu {
+    position: fixed !important;
+    top:78px;
+    left: 0;
+    width: 100%;
+    padding: 0.25rem 0;
+    background: rgba(4, 19, 46, 0.35);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+    z-index: 1000 !important;
+    transition: all 0.3s ease;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 0 0 1rem 0;
+    display: none;
+
+  }
+
+  .navbar-menu.show{
+    display: flex;
+  }
+
+}

@@ -1,0 +1,68 @@
+/* Essential layout styles - DO NOT REMOVE */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* THEME ROOT */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Main element base styles */
+main {
+  flex: 1;
+  width: 100%;
+  padding-top:50px;
+  min-height: calc(100vh - 100px);
+}
+
+/* Page-level container for About Us so content doesn't touch the edges */
+.about-page {
+  width: min(1200px, 100% - 3rem);
+  margin: 0 auto 3rem auto;
+}
+
+/* Gradient glow effects */
+.gradient-ellipse {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(150px);
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.gradient-left {
+  background: rgba(240, 89, 89, 0.9);
+  top: -280px;
+  left: -300px;
+  width: 600px;
+  height: 800px;
+}
+
+.gradient-right {
+  background: rgba(240, 89, 89, 0.9);
+  top: 200px;
+  right: -600px;
+}
+
+.gradient-bottom-right {
+  background: rgba(240, 89, 89, 0.9);
+  bottom: -200px;
+  right: -200px;
+}
+
+/* Ensure content is above gradients */
+.app > *:not(.gradient-ellipse) {
+  position: relative;
+  z-index: 1;
+}
